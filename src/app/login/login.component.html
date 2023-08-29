@@ -1,8 +1,16 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-reddit"> ¡Fake Reddit! </i>
+      </a>
+    </div>
+  </nav>
+
 <div class="container">
     <div class="row">
         <div class="col"></div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+        <div class="col text-center">
+            <div class="card mt-3" style="width: 18rem;">
                 <div class="card-header">
                     Inicio de sesion
                 </div>
@@ -11,20 +19,21 @@
                         <div class="input-group-text">
                             <i class="bi bi-envelope-exclamation"></i>
                         </div>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" placeholder="Contraseña">
                     </div>
-                    <div class="input-group">
+                    <div class="input-group mt-3">
                         <div class="input-group-text">
                             <i class="bi bi-key-fill"></i>
                         </div>
-                    <input type="email" class="form-control">
+                        <input type="email" class="form-control" placeholder="Email">
                     </div>
                 </div>
-                <div class="card-footer">
-                    <input type="button" class="btn-danger" value="Entrar">
+                <div class="card-footer position: relative">
+                    <input type="button" class="btn btn-danger" value="Entrar" (click)="login()">
                 </div>
 
             </div>
+            <input type="button" class="btn btn-link" value="Registrate">
         </div>
         <div class="col"></div>
     </div>
