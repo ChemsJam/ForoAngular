@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Comentario</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of preguntas">
+                        <td>{{p.id}}</td>
+                        <td>{{p.Pregunta}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
