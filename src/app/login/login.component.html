@@ -12,24 +12,31 @@
         <div class="col text-center">
             <div class="card mt-3" style="width: 18rem;">
                 <div class="card-header">
-                    Inicio de sesion
+                    Inicio de sesion {{email}}
                 </div>
                 <div class="card-body">
                     <div class="input-group">
                         <div class="input-group-text">
                             <i class="bi bi-envelope-exclamation"></i>
                         </div>
-                        <input type="email" class="form-control" placeholder="Contraseña">
+                        <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
                     </div>
                     <div class="input-group mt-3">
                         <div class="input-group-text">
                             <i class="bi bi-key-fill"></i>
                         </div>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Contraseña" [(ngModel)]="password">
                     </div>
                 </div>
+                <div class="alert alert-danger mt-3" role="alert" *ngIf="showError">
+                    A simple danger alert—check it out!
+                  </div>
                 <div class="card-footer position: relative">
-                    <input type="button" class="btn btn-danger" value="Entrar" (click)="login()">
+                    <button class="btn btn-dark" type="button" value="Entrar" (click)="login()">
+                        <div class="spinner-border spinner-border-sm" aria-hidden="true" role="status" *ngIf="showLoading" ></div>
+                        <span role="status"> Entrar</span>
+                      </button>
+                  <!-- <input type="button" class="btn btn-dark" value="Entrar" (click)="login()"> -->  
                 </div>
 
             </div>
