@@ -12,7 +12,7 @@
         <div class="col text-center">
             <div class="card mt-3" style="width: 18rem;">
                 <div class="card-header">
-                    Inicio de sesion {{email}}
+                    Registro de usuario
                 </div>
                 <div class="card-body">
                     <div class="input-group">
@@ -32,7 +32,7 @@
                     A simple danger alert—check it out!
                   </div>
                 <div class="card-footer position: relative">
-                    <button class="btn btn-dark" type="button" value="Entrar" (click)="login()">
+                    <button class="btn btn-dark" type="button" value="Entrar" (click)="register()">
                         <div class="spinner-border spinner-border-sm" aria-hidden="true" role="status" *ngIf="showLoading" ></div>
                         <span role="status"> Entrar</span>
                       </button>
@@ -40,7 +40,7 @@
                 </div>
 
             </div>
-            <a href="\signup" class="link-success">Registrarse</a>
+            <a href="\login" class="link-success">Volver al Login</a>
         </div>
         <div class="col"></div>
     </div>
