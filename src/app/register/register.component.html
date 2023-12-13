@@ -1,46 +1,40 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        
-      </a>
+        <span class="navbar-brand">
+            <i class="bi bi-reddit"> ¡Fake Reddit! </i>
+        </span>
     </div>
-  </nav>
-
+</nav>
 <div class="container">
     <div class="row">
         <div class="col"></div>
-        <div class="col text-center">
-            <div class="card mt-3" style="width: 18rem;">
-                <div class="card-header">
-                    Registro de usuario
-                </div>
+        <div class="col">
+            <div class="card mt-3 bg-dark text-light">
+                <div class="card-header">Registro de Usuario</div>
                 <div class="card-body">
                     <div class="input-group">
-                        <div class="input-group-text">
-                            <i class="bi bi-envelope-exclamation"></i>
-                        </div>
-                        <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email"> <!-- Enlazando input -->
                     </div>
                     <div class="input-group mt-3">
-                        <div class="input-group-text">
-                            <i class="bi bi-key-fill"></i>
-                        </div>
-                        <input type="email" class="form-control" placeholder="Contraseña" [(ngModel)]="password">
+                        <span class="input-group-text">
+                            <i class="bi bi-key"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
                     </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="showError">
+                       Vuelve a intentarlo
+                      </div>                      
                 </div>
-                <div class="alert alert-danger mt-3" role="alert" *ngIf="showError">
-                    A simple danger alert—check it out!
-                  </div>
-                <div class="card-footer position: relative">
-                    <button class="btn btn-dark" type="button" value="Entrar" (click)="register()">
-                        <div class="spinner-border spinner-border-sm" aria-hidden="true" role="status" *ngIf="showLoading" ></div>
-                        <span role="status"> Entrar</span>
-                      </button>
-                  <!-- <input type="button" class="btn btn-dark" value="Entrar" (click)="login()"> -->  
+                <div class="card-footer">
+                    <button class="btn btn-light float-end" (click)="registro()" [disabled]="showLoading">
+                        <div class="spinner-border spinner-border-sm" *ngIf="showLoading"></div>
+                        Entrar
+                        </button>
                 </div>
-
             </div>
-            <a href="\login" class="link-success">Volver al Login</a>
         </div>
         <div class="col"></div>
     </div>

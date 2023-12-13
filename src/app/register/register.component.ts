@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
 import { ApiRestService } from '../api-rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,22 +9,24 @@ import { ApiRestService } from '../api-rest.service';
 })
 export class RegisterComponent {
   email:string = ""
-  password:string = ""
+  pass = ""
   showError = false
   showLoading = false
-  constructor(private router: Router, private api: ApiRestService){}
-  register(){
-    this.showLoading = true
-    this.api.register(this.email, this.password).subscribe({
-      next: respuesta => {
+  
+  constructor(private api: ApiRestService, 
+    private router: Router){}
+
+    
+  registro(){
+    this.showLoading=true
+    this.api.register(this.email,this.pass).subscribe({
+      next: bien => {
         this.router.navigate(['/login'])
       },
-      error: problemilla => {
+      error: mal => {
         this.showError = true
         this.showLoading = false
       }
     })
   }
-  
 }
-
