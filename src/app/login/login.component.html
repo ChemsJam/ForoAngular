@@ -1,0 +1,44 @@
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <i class="bi bi-reddit"> ¡Fake Reddit! </i>
+        </span>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3">
+                <div 
+                class="card-header bg-dark text-light">Inicio de Sesión    
+                </div>
+                <div class="card-body bg-dark text-light">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark text-light">
+                            <i class="bi bi-envelope-exclamation"></i>
+                        </span>
+                        <input type="email" class="form-control bg-dark text-light" placeholder="Correo" [(ngModel)]="email"> <!-- Enlazando input -->
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-key-fill"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="showError">
+                        Los datos ingresados posiblemente sean incorrectos o no hayan sido registrados...
+                      </div>                      
+                </div>
+                <div class="card-footer position: relative bg-dark text-light">
+                    <button class="btn btn-light float-end" (click)="login()" [disabled]="showLoading">
+                        <div class="spinner-border spinner-border-sm" *ngIf="showLoading"></div>
+                        Entrar
+                        </button>
+                </div>
+            </div>
+            <p><a href="signup" class="link-primary link-offset-2">Registrate</a></p>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
